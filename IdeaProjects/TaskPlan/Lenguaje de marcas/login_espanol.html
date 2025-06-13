@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión / Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8eaf6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 0.9rem;
+            color: #3f51b5;
+        }
+
+        .lang-switch button {
+            background: none;
+            border: none;
+            color: #3f51b5;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 0.25rem;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container h2 {
+            color: #3f51b5;
+            margin-bottom: 1.5rem;
+        }
+
+        .login-container button {
+            display: block;
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #3f51b5;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #303f9f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="lang-switch">
+        <button onclick="location.href='login_espanol.html'">Español</button> |
+        <button onclick="location.href='login_ingles.html'">Inglés</button>
+    </div>
+
+    <div class="login-container">
+        <h2>Bienvenido</h2>
+        <button onclick="location.href='formulario_login_espanol.html'">Iniciar Sesión</button>
+        <button onclick="location.href='formulario_registro_espanol.html'">Registrarse</button>
+    </div>
+</body>
+
+</html>

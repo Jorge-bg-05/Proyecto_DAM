@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.9rem;
+      color: #3f51b5;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      color: #3f51b5;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 0 0.25rem;
+    }
+
+    .register-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+
+    .register-container h2 {
+      text-align: center;
+      color: #3f51b5;
+      margin-bottom: 1.5rem;
+    }
+
+    .register-container input {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0 auto 1rem auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .register-container input.error {
+      border-color: red;
+      background-color: #ffe6e6;
+    }
+
+    .register-container button {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0.75rem;
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .register-container button:hover {
+      background-color: #303f9f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switch">
+    <button onclick="location.href='formulario_registro_espanol.html'">Spanish</button> |
+    <button onclick="location.href='formulario_registro_ingles.html'">English</button>
+  </div>
+
+  <div class="register-container">
+    <h2>Create Account</h2>
+    <input type="text" id="nombre" placeholder="Full name" />
+    <input type="email" id="correo" placeholder="Email" />
+    <input type="text" id="usuario" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <input type="password" id="confirmar" placeholder="Confirm password" />
+    <button onclick="validarRegistro()">Register</button>
+  </div>
+
+  <script>
+    function validarRegistro() {
+      const campos = [
+        document.getElementById('nombre'),
+        document.getElementById('correo'),
+        document.getElementById('usuario'),
+        document.getElementById('password'),
+        document.getElementById('confirmar')
+      ];
+
+      campos.forEach(campo => {
+        campo.classList.remove('error');
+        if (!campo.value.trim()) {
+          campo.classList.add('error');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

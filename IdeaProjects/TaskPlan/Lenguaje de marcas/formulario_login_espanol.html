@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario de Inicio de Sesión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.9rem;
+      color: #3f51b5;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      color: #3f51b5;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 0 0.25rem;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #3f51b5;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-container input {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0 auto 1rem auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .form-container input.error {
+      border-color: red;
+      background-color: #ffe6e6;
+    }
+
+    .form-container button {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0.75rem;
+      background-color: #3f51b5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #303f9f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switch">
+    <button onclick="location.href='formulario_login_espanol.html'">Español</button> |
+    <button onclick="location.href='formulario_login_ingles.html'">Inglés</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario o correo electrónico" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button onclick="validar()">Acceder</button>
+  </div>
+
+  <script>
+    function validar() {
+      const usuario = document.getElementById('usuario');
+      const password = document.getElementById('password');
+
+      usuario.classList.remove('error');
+      password.classList.remove('error');
+
+      if (!usuario.value.trim()) {
+        usuario.classList.add('error');
+      }
+
+      if (!password.value.trim()) {
+        password.classList.add('error');
+      }
+    }
+  </script>
+</body>
+</html>

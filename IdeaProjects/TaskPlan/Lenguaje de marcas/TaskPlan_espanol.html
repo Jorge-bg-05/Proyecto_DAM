@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #3f51b5;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .icon-button {
+            font-size: 1.2rem;
+            background-color: white;
+            color: #3f51b5;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .board {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            gap: 1rem;
+            max-width: 90vw;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 0 0 250px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            padding: 1rem;
+            height: 80vh;
+            overflow-y: auto;
+        }
+
+        .column h2 {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .task {
+            background-color: white;
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .task h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .task p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .backlog {
+            background-color: #cfd8dc;
+        }
+
+        .selected {
+            background-color: #d1c4e9;
+        }
+
+        .running {
+            background-color: #ffe082;
+        }
+
+        .review {
+            background-color: #b2dfdb;
+        }
+
+        .done {
+            background-color: #c8e6c9;
+        }
+
+        .welcome {
+            background-color: #e8eaf6;
+            color: #3f51b5;
+            text-align: center;
+            padding: 0.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <div>
+                <button onclick="location.href='TaskPlan_espanol.html'"
+                    style="background: none; border: none; color: white; font-weight: bold; cursor: pointer;">Español</button>
+                |
+                <button onclick="location.href='TaskPlan_ingles.html'"
+                    style="background: none; border: none; color: white; font-weight: bold; cursor: pointer;">Inglés</button>
+            </div>
+            <h1 style="margin-left: 1rem;">Gestor de Tareas</h1>
+        </div>
+        <div class="header-icons">
+            <div class="icon-button"><i class="fas fa-search"></i></div>
+            <div class="icon-button"><i class="fas fa-bell"></i></div>
+            <a href="login_espanol.html" class="icon-button"><i class="fas fa-user"></i></a>
+            <div class="icon-button"><i class="fas fa-cog"></i></div>
+        </div>
+    </header>
+    <div class="welcome">
+        <p>¡Bienvenido al gestor de tareas! Organiza tu estudio con eficiencia.</p>
+    </div>
+
+    <div class="board">
+        <div class="column backlog">
+            <h2>Pendientes</h2>
+            <div class="task">
+                <h3>Crear tutorial interactivo</h3>
+                <p>Explicar cómo crear, editar y eliminar tareas.</p>
+            </div>
+            <div class="task">
+                <h3>Editar mensajes de bienvenida</h3>
+                <p>Personalizar texto inicial de la aplicación.</p>
+            </div>
+        </div>
+
+        <div class="column selected">
+            <h2>Seleccionadas</h2>
+            <div class="task">
+                <h3>Gestión de proyecto</h3>
+                <p>Organizar tareas por prioridad y estado.</p>
+            </div>
+            <div class="task">
+                <h3>Promoción de tweets</h3>
+                <p>Evaluar impacto de contenidos promocionados.</p>
+            </div>
+        </div>
+
+        <div class="column running">
+            <h2>En progreso</h2>
+            <div class="task">
+                <h3>Pruebas de interfaz</h3>
+                <p>Evaluar diseño de la página de inicio.</p>
+            </div>
+            <div class="task">
+                <h3>Integración base de datos</h3>
+                <p>Conectar la app a Apache Derby.</p>
+            </div>
+        </div>
+
+        <div class="column review">
+            <h2>En revisión</h2>
+            <div class="task">
+                <h3>Revisión de interfaz</h3>
+                <p>Valorar el uso de la app con usuarios reales.</p>
+            </div>
+            <div class="task">
+                <h3>Pruebas finales</h3>
+                <p>Evaluación general de estabilidad y optimización.</p>
+            </div>
+        </div>
+
+        <div class="column done">
+            <h2>Completadas</h2>
+            <div class="task">
+                <h3>Creación de esquema de base de datos</h3>
+                <p>Tablas Asignaturas y Tareas implementadas.</p>
+            </div>
+            <div class="task">
+                <h3>Validaciones de fecha</h3>
+                <p>Solo se aceptan fechas futuras.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Proyecto realizado por un alumno de 1º DAM - Curso 2024/2025</p>
+    </div>
+</body>
+
+</html>

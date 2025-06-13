@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #3f51b5;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .icon-button {
+      font-size: 1.2rem;
+      background-color: white;
+      color: #3f51b5;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .board {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      gap: 1rem;
+      max-width: 90vw;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      flex: 0 0 250px;
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      padding: 1rem;
+      height: 80vh;
+      overflow-y: auto;
+    }
+
+    .column h2 {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .task {
+      background-color: white;
+      padding: 0.8rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .task h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    .task p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .backlog {
+      background-color: #cfd8dc;
+    }
+
+    .selected {
+      background-color: #d1c4e9;
+    }
+
+    .running {
+      background-color: #ffe082;
+    }
+
+    .review {
+      background-color: #b2dfdb;
+    }
+
+    .done {
+      background-color: #c8e6c9;
+    }
+
+    .welcome {
+      background-color: #e8eaf6;
+      color: #3f51b5;
+      text-align: center;
+      padding: 0.8rem;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <div>
+        <button onclick="location.href='TaskPlan_espanol.html'"
+          style="background: none; border: none; color: white; font-weight: bold; cursor: pointer;">Spanish</button> |
+        <button onclick="location.href='TaskPlan_ingles.html'"
+          style="background: none; border: none; color: white; font-weight: bold; cursor: pointer;">English</button>
+      </div>
+      <h1 style="margin-left: 1rem;">Task Manager</h1>
+    </div>
+    <div class="header-icons">
+      <div class="icon-button"><i class="fas fa-search"></i></div>
+      <div class="icon-button"><i class="fas fa-bell"></i></div>
+      <a href="login_ingles.html" class="icon-button"><i class="fas fa-user"></i></a>
+      <div class="icon-button"><i class="fas fa-cog"></i></div>
+    </div>
+  </header>
+  <div class="welcome">
+    <p>Welcome to the task manager! Organize your study efficiently.</p>
+  </div>
+
+  <div class="board">
+    <div class="column backlog">
+      <h2>Backlog</h2>
+      <div class="task">
+        <h3>Create interactive tutorial</h3>
+        <p>Explain how to create, edit, and delete tasks.</p>
+      </div>
+      <div class="task">
+        <h3>Edit welcome messages</h3>
+        <p> Customize the app's welcome message.</p>
+      </div>
+    </div>
+
+    <div class="column selected">
+      <h2>Selected</h2>
+      <div class="task">
+        <h3>Project management</h3>
+        <p>Organize tasks by priority and status.</p>
+      </div>
+      <div class="task">
+        <h3>Tweet promotion</h3>
+        <p>Assess the impact of promoted content.</p>
+      </div>
+    </div>
+
+    <div class="column running">
+      <h2>In Progress</h2>
+      <div class="task">
+        <h3>UI testing</h3>
+        <p>Evaluate the homepage design.</p>
+      </div>
+      <div class="task">
+        <h3>Database integration</h3>
+        <p>Connect the app to Apache Derby.</p>
+      </div>
+    </div>
+
+    <div class="column review">
+      <h2>In Review</h2>
+      <div class="task">
+        <h3>UI review</h3>
+        <p>Evaluate real user experience with the app.</p>
+      </div>
+      <div class="task">
+        <h3>Final testing</h3>
+        <p>General evaluation of stability and optimization.</p>
+      </div>
+    </div>
+
+    <div class="column done">
+      <h2>Done</h2>
+      <div class="task">
+        <h3>Database schema creation</h3>
+        <p>Subjects and Tasks tables implemented.</p>
+      </div>
+      <div class="task">
+        <h3>Date validations</h3>
+        <p> Only future dates are accepted.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Project developed by a 1st-year DAM student - Academic Year 2024/2025</p>
+  </div>
+</body>
+
+</html>
